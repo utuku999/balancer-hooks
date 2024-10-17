@@ -1,5 +1,7 @@
 ## BALANCER HOOKS
 
+### V3
+
 https://balancer.fi/
 
 Init:
@@ -63,7 +65,7 @@ $ forge verify-contract \
     src/MyToken.sol:MyToken
 ```
 
-https://docs-v3.balancer.fi/concepts/core-concepts/hooks.html
+Docs: https://docs-v3.balancer.fi/concepts/core-concepts/hooks.html
 
 ![Hooks](./img/hooks.png?raw=true "Hooks")
 
@@ -74,3 +76,7 @@ https://docs-v3.balancer.fi/concepts/core-concepts/hooks.html
 - HOOKS: https://github.com/balancer/scaffold-balancer-v3/tree/main/packages/foundry/contracts/hooks
 
 - TESTS: https://github.com/balancer/scaffold-balancer-v3/tree/main/packages/foundry/test
+
+- Examples: https://hooks.balancer.fi/
+
+- Scaffold: https://github.com/balancer/scaffold-balancer-v3
