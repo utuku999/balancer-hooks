@@ -3,16 +3,17 @@ pragma solidity ^0.8.24;
 
 import {BaseHooks} from "@balancer-labs/v3-vault/contracts/BaseHooks.sol";
 import {IVault} from "@balancer-labs/v3-interfaces/contracts/vault/IVault.sol";
-import {TokenConfig, LiquidityManagement} from "@balancer-labs/v3-interfaces/contracts/vault/VaultTypes.sol";
+import {TokenConfig, LiquidityManagement, PoolSwapParams, HookFlags} from "@balancer-labs/v3-interfaces/contracts/vault/VaultTypes.sol";
 import {IBasePoolFactory} from "@balancer-labs/v3-interfaces/contracts/vault/IBasePoolFactory.sol";
 import {IRouterCommon} from "@balancer-labs/v3-interfaces/contracts/vault/IRouterCommon.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {VaultGuard} from "@balancer-labs/v3-vault/contracts/VaultGuard.sol";
 
 /**
  * @title VeBAL Fee Discount Hook
  * @notice Applies a 50% discount to the swap fee for users that hold veBAL
  */
-contract VeBALFeeDiscountHook is BaseHooks {
+contract VeBALFeeDiscountHook is BaseHooks, VaultGuard {
     address private immutable _allowedFactory;
     address private immutable _trustedRouter;
     address private immutable _veBAL;
@@ -22,7 +23,7 @@ contract VeBALFeeDiscountHook is BaseHooks {
         address allowedFactory,
         address trustedRouter,
         address veBAL
-    ) BaseHooks(vault) {
+    ) VaultGuard(vault) {
         _allowedFactory = allowedFactory;
         _trustedRouter = trustedRouter;
         _veBAL = veBAL;
@@ -34,7 +35,7 @@ contract VeBALFeeDiscountHook is BaseHooks {
         address pool,
         TokenConfig[] memory,
         LiquidityManagement calldata
-    ) public override returns (bool) {
+    ) public view override returns (bool) {
         // Only pools deployed by an allowed factory may use this hook
         return
             factory == _allowedFactory &&
@@ -54,7 +55,7 @@ contract VeBALFeeDiscountHook is BaseHooks {
 
     function onComputeDynamicSwapFeePercentage(
         PoolSwapParams calldata params,
-        address pool,
+        address /*pool*/,
         uint256 staticSwapFeePercentage
     )
         public

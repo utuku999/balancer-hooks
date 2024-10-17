@@ -10,6 +10,8 @@ $ forge init
 $ forge install https://github.com/balancer/balancer-v3-monorepo
 
 $ forge install OpenZeppelin/openzeppelin-contracts
+
+$ forge install https://github.com/balancer/permit2
 ```
 
 Remappings in remappings.txt file:
@@ -68,3 +70,7 @@ https://docs-v3.balancer.fi/concepts/core-concepts/hooks.html
 ![Flags](./img/flags.png?raw=true "Flags")
 
 ![Route](./img/route.png?raw=true "Route")
+
+- HOOKS: https://github.com/balancer/scaffold-balancer-v3/tree/main/packages/foundry/contracts/hooks
+
+- TESTS: https://github.com/balancer/scaffold-balancer-v3/tree/main/packages/foundry/test
