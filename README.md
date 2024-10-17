@@ -2,13 +2,17 @@
 
 https://balancer.fi/
 
+Init:
+
 ```shell
 $ forge init
 
 $ forge install https://github.com/balancer/balancer-v3-monorepo
+
+$ forge install OpenZeppelin/openzeppelin-contracts
 ```
 
-Add remappings.txt file:
+Remappings in remappings.txt file:
 
 - @test/=lib/balancer-v3-monorepo/pkg/
 
@@ -25,3 +29,13 @@ Add remappings.txt file:
 - @openzeppelin/=lib/openzeppelin-contracts/
 
 https://github.com/balancer/balancer-v3-monorepo
+
+Useful commands:
+
+```shell
+$ forge compile
+
+$ forge build
+
+$ forge test
+```
