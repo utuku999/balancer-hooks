@@ -5,3 +5,4 @@
 @balancer-labs/v3-pool-weighted/=lib/balancer-v3-monorepo/pkg/pool-weighted/
 @balancer-labs/v3-vault/=lib/balancer-v3-monorepo/pkg/vault/
 @openzeppelin/=lib/openzeppelin-contracts/
+permit2/=lib/permit2/

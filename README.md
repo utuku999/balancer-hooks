@@ -28,6 +28,8 @@ Remappings in remappings.txt file:
 
 - @openzeppelin/=lib/openzeppelin-contracts/
 
+- permit2/=lib/permit2/
+
 https://book.getfoundry.sh/
 
 https://github.com/balancer/balancer-v3-monorepo
@@ -59,4 +61,10 @@ $ forge verify-contract \
     src/MyToken.sol:MyToken
 ```
 
+https://docs-v3.balancer.fi/concepts/core-concepts/hooks.html
+
 ![Hooks](./img/hooks.png?raw=true "Hooks")
+
+![Flags](./img/flags.png?raw=true "Flags")
+
+![Route](./img/route.png?raw=true "Route")
